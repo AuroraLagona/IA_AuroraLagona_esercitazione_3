@@ -1,0 +1,501 @@
+
+body { 
+    background-color: black;
+    font-family: sans-serif, Helvetica;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+header {
+    background-color: #F2970F;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 60px; 
+    flex-wrap: wrap;
+}
+
+header .brand {
+    font-size: 1.2rem;
+    color:black;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%; /* Immagine riempie tutto lo schermo */
+    object-fit: cover; /* Assicura che l'immagine si adatti senza deformarsi */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay semi-trasparente nero */
+    z-index: 0; /* L'overlay si trova sotto il testo */
+}
+
+.hero-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1; /* Il testo deve essere sopra l'overlay */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Responsive - Media Queries */
+
+/* Su schermi più grandi (PC, tablet) */
+@media (max-width: 1024px) {
+    .hero {
+        height: 350px; /* Ridurre l'altezza dell'hero su dispositivi medi */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Ridurre la dimensione del testo */
+    }
+
+    .hero p {
+        font-size: 1.25rem; /* Ridurre la dimensione del testo */
+    }
+}
+
+/* Su dispositivi mobile (max 768px) */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Ridurre l'altezza dell'hero su dispositivi più piccoli */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Testo più piccolo */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Testo più piccolo */
+    }
+
+    /* Ridurre la distanza dal bordo dello schermo */
+    .hero-text {
+        padding: 10px;
+    }
+}
+
+/* Su schermi extra piccoli (cellulare in modalità portrait) */
+@media (max-width: 480px) {
+    .hero {
+        height: 250px; /* Ancora più piccolo per dispositivi molto piccoli */
+    }
+
+    .hero h1 {
+        font-size: 1.5rem; /* Font ancora più piccolo */
+    }
+
+    .hero p {
+        font-size: 0.9rem; /* Font ancora più piccolo */
+    }
+
+    /* Ridurre il padding */
+    .hero-text {
+        padding: 5px;
+    }
+}
+
+
+.cards {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.card {
+    width: 250px; 
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin: 20px 0 10px;
+    color: #F2970F;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+
+@media (max-width: 1024px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 30px; 
+        text-align: left;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    .cards {
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card {
+        width: 220px; 
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    footer ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    .cards {
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 200px; 
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+    .text-image-section {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    footer a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .cards {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 150px; 
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .text-image-section {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    footer ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer a {
+        font-size: 0.8rem;
+    }
+}
+
+
+.text-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+@media (min-width: 1024px) {
+    .text-image-section {
+        margin-left: 100px; 
+    }
+
+    .text {
+        width: 50%;
+        text-align: left; 
+       
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .text-image-section {
+        margin-left: 0; 
+        margin-right: 0; 
+    }
+
+    .text {
+        width: 100%; 
+        text-align: center; 
+    }
+
+  
+}
+
+
+@media (max-width: 480px) {
+    .text-image-section {
+        margin-left: 0; 
+    }
+
+    .text {
+        width: 100%;
+        text-align: left; 
+    }
+
+}
+
+
+
+.text h2 {
+    color: #F2970F; 
+}
+
+
+@media (min-width: 1024px) {
+    .text h2 {
+        color: #F2970F; 
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .text h2 {
+        color: #F2970F; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .text h2 {
+        color: #F2970F; 
+    }
+}
+
+@media (max-width: 480px) {
+    .text h2 {
+        color: #F2970F; 
+    }
+}
+
+
+footer {
+    background-color: #F2970F;
+    font-size: 1.25rem;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+
+footer li {
+    margin: 0;
+}
+
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+@media (min-width: 1024px) {
+    footer {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    footer ul {
+        flex-direction: row;
+    }
+
+    footer a {
+        font-size: 1.25rem; 
+    }
+}
+
+
+@media (max-width: 1024px) {
+    footer {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 20px; 
+    }
+
+    footer ul {
+        flex-direction: row; 
+    }
+
+    footer a {
+        font-size: 1.125rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 15px; 
+    }
+
+    footer ul {
+        flex-direction: column; 
+    }
+
+    footer a {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 1rem;
+        padding: 15px 0;
+    }
+
+    footer ul {
+        flex-direction: column; 
+    }
+
+    footer a {
+        font-size: 0.9rem; 
+    }
+}
